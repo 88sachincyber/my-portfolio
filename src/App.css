@@ -52,3 +52,35 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px; /* Adjust based on your navbar height */
 }
+/* Button Styles */
+.btn-pink-custom {
+    background-color: #ff4f8b !important;
+    border-color: #ff4f8b !important;
+    color: white !important;
+}
+
+.btn-pink-custom:hover {
+    background-color: #ff3d7f !important;
+    border-color: #ff3d7f !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 79, 139, 0.3);
+}
+
+.btn-outline-pink-custom {
+    background-color: transparent !important;
+    border: 2px solid #ff4f8b !important;
+    color: #ff4f8b !important;
+}
+
+.btn-outline-pink-custom:hover {
+    background-color: #ff4f8b !important;
+    border-color: #ff4f8b !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 79, 139, 0.3);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}

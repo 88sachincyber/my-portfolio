@@ -40,7 +40,7 @@ const Projects = () => {
                 'PDO', 'Session Management', 'CRUD Operations'
             ],
             githubLink: 'https://github.com/88sachincyber/library-management',
-            liveLink: '' 
+            liveLink: ''
         },
         {
             id: 5,
@@ -59,9 +59,9 @@ const Projects = () => {
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
                 {projects.map((project, index) => (
                     <div
+                        key={project.id}
                         className="col animate-scale-in"
                         style={{ animationDelay: `${0.2 * index}s` }}
-                        key={project.id}
                     >
                         <div className="card h-100 bg-dark text-light border-secondary shadow-custom">
                             <div className="card-body">
@@ -77,9 +77,8 @@ const Projects = () => {
                                 </div>
 
                                 {/* ---- Buttons ---- */}
-                                <div className="d-flex justify-content-between">
-                                    {/* GitHub Button (only if available) */}
-                                    {project.githubLink && (
+                                <div className="d-flex gap-2 flex-wrap">
+                                    {project.githubLink && project.githubLink.trim() !== '' && (
                                         <a
                                             href={project.githubLink}
                                             target="_blank"
@@ -90,8 +89,7 @@ const Projects = () => {
                                         </a>
                                     )}
 
-                                    {/* Live Demo Button (only if available) */}
-                                    {project.liveLink && (
+                                    {project.liveLink && project.liveLink.trim() !== '' && (
                                         <a
                                             href={project.liveLink}
                                             target="_blank"

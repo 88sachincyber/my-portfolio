@@ -15,17 +15,34 @@ const Projects = () => {
             id: 2,
             title: 'TempShare',
             description: 'Developed a secure, full-stack Temporary file sharing web application using React (frontend) and Node.js/Express (backend). Implemented user authentication with JWT, anonymous and authenticated file uploads, and RESTful APIs. Deployed the frontend on Vercel and backend on Render, ensuring seamless cross-origin communication and responsive design with Tailwind CSS.',
-            technologies: ['React','Vite','Tailwind CSS', 'ExpressJS', 'NodeJS', 'MongoDB','Vercel','Render','JWT'],
+            technologies: ['React', 'Vite', 'Tailwind CSS', 'ExpressJS', 'NodeJS', 'MongoDB', 'Vercel', 'Render', 'JWT'],
             githubLink: 'https://github.com/yourusername/task-app',
             liveLink: 'https://client-flame-seven-98.vercel.app/signup#/'
         },
         {
-            id: 2,
+            id: 3,
             title: 'LiveChatHub',
             description: 'Developed a secure, full-stack real-time chat application with React (frontend) and Node.js/Express (backend). Implemented JWT-based authentication with bcrypt, real-time messaging using Socket.IO, and PostgreSQL for scalable storage. Deployed on Render with responsive UI, online user indicators, and cross-origin protection using CORS and security middleware.',
             technologies: ['Node.js', 'Express.js', 'Socket.IO', 'PostgreSQL', 'HTML5', 'CSS3', 'JavaScript', 'JWT', 'bcrypt'],
             githubLink: 'https://github.com/yourusername/task-app',
             liveLink: 'https://chat-app-f22d.onrender.com/'
+        },
+        {
+            id: 4,
+            title: 'Course Explorer',
+            description: 'Built a fully interactive course-learning platform using React, Vite, and Tailwind CSS with a clean, component-driven architecture. Implemented dynamic navigation across courses, topics, and subtopics, along with Markdown rendering, search functionality, and progress tracking. Added a client-side admin dashboard and a full course builder with localStorage persistence. Deployed on Vercel with proper routing fallbacks for deep links.',
+            technologies: [
+                'React.js',
+                'Vite',
+                'Tailwind CSS',
+                'React Router',
+                'react-markdown',
+                'LocalStorage',
+                'JavaScript (ES6+)',
+                'Vercel'
+            ],
+            githubLink: 'https://github.com/88sachincyber/Course_Explorer',
+            liveLink: 'https://course-explorer-six.vercel.app'
         },
         // Add more projects as needed
     ];

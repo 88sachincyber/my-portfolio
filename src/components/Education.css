@@ -1,0 +1,750 @@
+/* =====================================================
+   EDUCATION — EDITORIAL TIMELINE
+===================================================== */
+
+.education-editorial {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding: 0 6vw 70px;
+
+    background: #eee9df;
+
+    color: #171717;
+
+    border-bottom: 1px solid #171717;
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   PAPER TEXTURE
+===================================================== */
+
+.education-paper {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    opacity: 0.22;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            rgba(0, 0, 0, 0.18) 0.5px,
+            transparent 0.5px
+        );
+
+    background-size: 4px 4px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.education-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(23, 23, 23, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        20% 100%,
+        100% 120px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.education-header {
+    min-height: 110px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.4fr
+        1fr
+        2fr
+        0.5fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid
+        rgba(23, 23, 23, 0.35);
+
+    font-family:
+        "Courier New",
+        monospace;
+}
+
+
+/* Number */
+
+.education-number {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+}
+
+
+/* Label */
+
+.education-label {
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* Intro */
+
+.education-intro {
+    width: 290px;
+
+    justify-self: center;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+}
+
+
+/* Year */
+
+.education-year {
+    text-align: right;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.education-title {
+    padding-top: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.education-title > span {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+.education-title h2 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            70px,
+            10vw,
+            150px
+        );
+
+    font-weight: 500;
+
+    line-height: 0.75;
+
+    letter-spacing: -0.075em;
+}
+
+.education-title-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(23, 23, 23, 0.3);
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.education-timeline {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 70px;
+
+    border-top: 1px solid #171717;
+}
+
+
+/* Vertical timeline line */
+
+.timeline-line {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 31%;
+
+    width: 1px;
+
+    background:
+        rgba(23, 23, 23, 0.25);
+}
+
+
+/* =====================================================
+   EDUCATION ENTRY
+===================================================== */
+
+.education-entry {
+    position: relative;
+
+    min-height: 190px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.35fr
+        0.25fr
+        0.8fr
+        2fr
+        0.4fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid
+        rgba(23, 23, 23, 0.3);
+
+    transition:
+        background 0.3s ease;
+}
+
+.education-entry:hover {
+    background:
+        rgba(23, 23, 23, 0.035);
+}
+
+
+/* =====================================================
+   ENTRY NUMBER
+===================================================== */
+
+.education-entry-number {
+    align-self: stretch;
+
+    padding-top: 27px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.5;
+}
+
+
+/* =====================================================
+   TIMELINE POINT
+===================================================== */
+
+.timeline-point {
+    position: relative;
+
+    z-index: 5;
+
+    width: 14px;
+
+    height: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #171717;
+
+    border-radius: 50%;
+
+    background: #eee9df;
+}
+
+.timeline-point span {
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #171717;
+}
+
+
+/* =====================================================
+   YEARS
+===================================================== */
+
+.education-years {
+    padding-left: 18px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.06em;
+
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.education-content {
+    padding:
+        30px
+        20px
+        30px 25px;
+}
+
+.education-degree {
+    margin-bottom: 7px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.55;
+}
+
+.education-content h3 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            42px
+        );
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.035em;
+}
+
+
+/* Institution */
+
+.education-institution {
+    margin-top: 16px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* Affiliation */
+
+.education-affiliation {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding:
+        5px 8px;
+
+    border: 1px solid
+        rgba(23, 23, 23, 0.4);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 6px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* Description */
+
+.education-content p {
+    width: 390px;
+
+    max-width: 100%;
+
+    margin:
+        13px 0 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    line-height: 1.7;
+
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   DECORATIVE MARK
+===================================================== */
+
+.education-mark {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.education-mark span {
+    width: 6px;
+
+    height: 6px;
+
+    border: 1px solid #171717;
+
+    border-radius: 50%;
+}
+
+.education-mark span:nth-child(2) {
+    background: #171717;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.education-footer {
+    min-height: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+
+    border-top: 1px solid
+        rgba(23, 23, 23, 0.35);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.09em;
+}
+
+.education-footer span:not(:last-child) {
+    border-right:
+        1px solid
+        rgba(23, 23, 23, 0.25);
+}
+
+.education-footer span:nth-child(2),
+.education-footer span:nth-child(3) {
+    text-align: center;
+}
+
+.education-footer span:last-child {
+    text-align: right;
+}
+
+
+/* =====================================================
+   BACKGROUND NUMBER
+===================================================== */
+
+.education-bg-number {
+    position: absolute;
+
+    z-index: -1;
+
+    right: -2vw;
+
+    bottom: -4vw;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            300px,
+            38vw,
+            650px
+        );
+
+    line-height: 0.7;
+
+    color:
+        rgba(23, 23, 23, 0.035);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .education-editorial {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .education-header {
+        grid-template-columns:
+            0.4fr
+            1fr
+            1.5fr
+            0.5fr;
+    }
+
+    .education-entry {
+        grid-template-columns:
+            40px
+            35px
+            110px
+            1fr
+            30px;
+    }
+
+    .education-content h3 {
+        font-size: 28px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .education-editorial {
+        padding:
+            0
+            18px
+            45px;
+    }
+
+
+    .education-header {
+        min-height: 90px;
+
+        grid-template-columns:
+            0.4fr
+            1fr
+            0.5fr;
+    }
+
+    .education-intro {
+        display: none;
+    }
+
+
+    .education-title {
+        padding-top: 55px;
+
+        gap: 15px;
+    }
+
+    .education-title h2 {
+        font-size: 68px;
+    }
+
+    .education-title-line {
+        display: none;
+    }
+
+
+    /* Timeline */
+
+    .education-timeline {
+        margin-top: 45px;
+    }
+
+    .timeline-line {
+        left: 24px;
+    }
+
+
+    .education-entry {
+        min-height: 0;
+
+        display: grid;
+
+        grid-template-columns:
+            35px
+            30px
+            1fr;
+
+        padding:
+            28px 0;
+    }
+
+
+    .education-entry-number {
+        padding-top: 4px;
+    }
+
+
+    .timeline-point {
+        margin-top: 3px;
+    }
+
+
+    .education-years {
+        grid-column: 3;
+
+        padding: 0;
+
+        margin-bottom: 10px;
+
+        font-size: 7px;
+    }
+
+
+    .education-content {
+        grid-column: 3;
+
+        padding:
+            0;
+    }
+
+
+    .education-content h3 {
+        font-size: 27px;
+    }
+
+
+    .education-institution {
+        font-size: 8px;
+    }
+
+
+    .education-content p {
+        font-size: 7px;
+    }
+
+
+    .education-mark {
+        display: none;
+    }
+
+
+    .education-footer {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        padding: 10px 0;
+    }
+
+    .education-footer span:nth-child(3),
+    .education-footer span:nth-child(4) {
+        display: none;
+    }
+
+    .education-footer span:nth-child(2) {
+        text-align: right;
+    }
+
+
+    .education-bg-number {
+        font-size: 250px;
+    }
+}

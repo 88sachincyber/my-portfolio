@@ -1,124 +1,436 @@
-import React, { useEffect, useState } from 'react';
-import ProfileImage from '../assets/profile.jpg';
+import React, { useEffect, useState } from "react";
+import "./About.css";
 
 const Typewriter = ({ words }) => {
-    const [currentWordIndex, setCurrentWordIndex] = useState(0);
-    const [displayText, setDisplayText] = useState('');
-    const [isTyping, setIsTyping] = useState(true);
+    const [wordIndex, setWordIndex] = useState(0);
+    const [text, setText] = useState("");
+    const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
-        const currentWord = words[currentWordIndex];
+        const currentWord = words[wordIndex];
 
-        if (isTyping) {
-            if (displayText.length < currentWord.length) {
-                const timeout = setTimeout(() => {
-                    setDisplayText(currentWord.slice(0, displayText.length + 1));
-                }, 200); // typing speed
-                return () => clearTimeout(timeout);
-            } else {
-                // Finished typing, wait, then clear
-                const pause = setTimeout(() => {
-                    setIsTyping(false);
-                }, 1500); // pause after full word
-                return () => clearTimeout(pause);
-            }
-        } else {
-            // Clear text instantly and start next word
-            const clear = setTimeout(() => {
-                setDisplayText('');
-                setCurrentWordIndex((prev) => (prev + 1) % words.length);
-                setIsTyping(true);
-            }, 200); // delay before starting next word
-            return () => clearTimeout(clear);
+        let timeout;
+
+        if (!deleting && text.length < currentWord.length) {
+            timeout = setTimeout(() => {
+                setText(currentWord.slice(0, text.length + 1));
+            }, 75);
+        } else if (!deleting && text.length === currentWord.length) {
+            timeout = setTimeout(() => {
+                setDeleting(true);
+            }, 1800);
+        } else if (deleting && text.length > 0) {
+            timeout = setTimeout(() => {
+                setText(currentWord.slice(0, text.length - 1));
+            }, 40);
+        } else if (deleting && text.length === 0) {
+            setDeleting(false);
+            setWordIndex((prev) => (prev + 1) % words.length);
         }
-    }, [displayText, isTyping, currentWordIndex, words]);
+
+        return () => clearTimeout(timeout);
+    }, [text, deleting, wordIndex, words]);
 
     return (
-        <span className="typewriter-text">
-            {displayText}
-            <span className="blinking-cursor">|</span>
+        <span className="hero-typewriter">
+            {text}
+            <span className="hero-cursor">|</span>
         </span>
     );
 };
 
-
 const About = () => {
     return (
-        <section className="about-section text-center text-md-start">
-            <div className="row align-items-center justify-content-center">
-                {/* Text Content */}
-                <div className="col-12 col-md-6 order-md-1 order-2 mt-4 mt-md-0">
-                    <h5 className="text-pink-custom animate-fade-in-up animate-delay-1">HELLO 👋</h5>
-                    <h1 className="display-3 fw-bold animate-fade-in-up animate-delay-2">
-                        I'm <span className="text-light">Sachin Yadav</span> a <br />
-                        <span className="text-pink-custom">
-                            <Typewriter
-                                words={[
-                                    'Web Developer',
-                                    'React Developer',
-                                    'UI/UX Designer',
-                                    'MERN Stack Developer'
-                                ]}
-                            />
+        <section className="editorial-hero" id="about">
+
+            {/* =====================================
+                BACKGROUND
+            ===================================== */}
+
+            <div className="hero-paper" />
+            <div className="hero-grid" />
+
+            {/* Giant background number */}
+            <div className="hero-number">01</div>
+
+
+            {/* =====================================
+                TOP INFORMATION
+            ===================================== */}
+
+            
+
+
+            {/* =====================================
+                MAIN HERO
+            ===================================== */}
+
+            <div className="hero-main">
+
+                {/* =================================
+                    LEFT SIDE — NAME
+                ================================= */}
+
+                <div className="hero-left">
+
+                    <div className="hello-text">
+                        HELLO
+                        <span>—</span>
+                        I'M
+                    </div>
+
+                    <h1 className="hero-name">
+                        <span>SACHIN</span>
+                        <span className="hero-name-second">
+                            YADAV
                         </span>
                     </h1>
-                    <p className="lead mt-4 animate-fade-in-up animate-delay-3">
-                        I am a passionate and dedicated Computer Science student with a strong foundation in programming, full-stack development, Data Structure & Algorithm and problem-solving. My goal is to leverage my technical skills to build impactful and user-centric software solutions. I aim to join an innovative organization where I can grow as a developer, contribute meaningfully to projects, and continue learning new technologies to stay ahead in the ever-evolving tech landscape.
+
+                    <div className="name-line" />
+
+                </div>
+
+
+                {/* =================================
+                    RIGHT SIDE — INTRO
+                ================================= */}
+
+                <div className="hero-right">
+
+                    <div className="build-label">
+                        I BUILD
+                    </div>
+
+                    <h2 className="hero-role">
+                        <Typewriter
+                            words={[
+                                "FULL STACK APPLICATIONS",
+                                "AI POWERED PRODUCTS",
+                                "MODERN WEB EXPERIENCES",
+                                "SOFTWARE SOLUTIONS",
+                            ]}
+                        />
+                    </h2>
+
+                    <p className="hero-description">
+                        Computer Science Engineering graduate passionate
+                        about building thoughtful digital experiences,
+                        scalable applications and solving real-world
+                        problems through technology.
                     </p>
 
+
                     {/* Buttons */}
-                    <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
+                    <div className="hero-actions">
+
                         <a
-                            href="https://www.linkedin.com/in/sachin-yadav-cse/"
-                            className="btn btn-pink-custom btn-lg mt-4 me-3 animate-scale-in animate-delay-4"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="#contact"
+                            className="editorial-button primary-button"
                         >
-                            Let's Connect!
+                            <span>HIRE ME</span>
+                            <strong>↗</strong>
                         </a>
 
                         <a
                             href="/SachinYadav_Resume.pdf"
-                            className="btn btn-outline-light btn-lg mt-4 animate-scale-in animate-delay-4"
+                            className="editorial-button secondary-button"
                             download
                         >
-                            Download Resume
+                            <span>DOWNLOAD RESUME</span>
+                            <strong>↓</strong>
                         </a>
+
                     </div>
+
                 </div>
 
-                {/* Profile Image */}
-                <div className="col-12 col-md-5 order-md-2 order-1 text-center">
-                    <img
-                        src={ProfileImage}
-                        alt="Sachin Yadav"
-                        className="img-fluid rounded-circle-custom shadow-custom animate-scale-in"
-                        style={{ maxWidth: '400px', width: '100%', height: 'auto', objectFit: 'cover' }}
-                    />
-                </div>
             </div>
 
-            {/* Typewriter effect styling */}
-            <style jsx>{`
-                .typewriter-text {
-                    font-weight: bold;
-                    font-size: 1.5rem;
-                    white-space: nowrap;
-                }
 
-                .blinking-cursor {
-                    display: inline-block;
-                    width: 1px;
-                    background-color: currentColor;
-                    animation: blink 0.7s steps(1) infinite;
-                    margin-left: 3px;
-                }
+            {/* =====================================
+                BIRDS
+            ===================================== */}
 
-                @keyframes blink {
-                    0%, 100% { opacity: 0; }
-                    50% { opacity: 1; }
-                }
-            `}</style>
+            <div className="birds">
+
+                <svg
+                    className="bird bird-1"
+                    viewBox="0 0 80 40"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M8 22 C18 10 29 10 40 21 C51 10 62 10 72 22"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                </svg>
+
+                <svg
+                    className="bird bird-2"
+                    viewBox="0 0 80 40"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M8 22 C18 10 29 10 40 21 C51 10 62 10 72 22"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                </svg>
+
+                <svg
+                    className="bird bird-3"
+                    viewBox="0 0 80 40"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M8 22 C18 10 29 10 40 21 C51 10 62 10 72 22"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                </svg>
+
+                <svg
+                    className="bird bird-4"
+                    viewBox="0 0 80 40"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M8 22 C18 10 29 10 40 21 C51 10 62 10 72 22"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    />
+                </svg>
+
+            </div>
+
+
+            {/* =====================================
+                SUN
+            ===================================== */}
+
+            <div className="hero-sun">
+                <div className="sun-inner" />
+            </div>
+
+
+            {/* =====================================
+                MOUNTAIN LANDSCAPE
+            ===================================== */}
+
+            <div className="mountain-landscape">
+
+                <svg
+                    className="mountains-svg"
+                    viewBox="0 0 1600 650"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                >
+
+                    {/* FAR BACK MOUNTAINS */}
+
+                    <path
+                        className="mountain-back"
+                        d="
+                            M0 430
+                            L120 350
+                            L210 415
+                            L330 280
+                            L420 370
+                            L550 240
+                            L670 380
+                            L790 270
+                            L900 390
+                            L1030 250
+                            L1150 360
+                            L1270 270
+                            L1400 390
+                            L1510 300
+                            L1600 350
+                            L1600 650
+                            L0 650
+                            Z
+                        "
+                    />
+
+
+                    {/* MAIN MOUNTAINS */}
+
+                    <path
+                        className="mountain-main"
+                        d="
+                            M0 520
+                            L170 390
+                            L290 470
+                            L470 220
+                            L590 390
+                            L735 100
+                            L900 370
+                            L1060 190
+                            L1190 390
+                            L1360 270
+                            L1510 380
+                            L1600 320
+                            L1600 650
+                            L0 650
+                            Z
+                        "
+                    />
+
+
+                    {/* SNOW CAPS */}
+
+                    <path
+                        className="mountain-snow"
+                        d="
+                            M470 220
+                            L590 390
+                            L540 345
+                            L500 380
+                            L465 335
+                            L430 380
+                            Z
+                        "
+                    />
+
+                    <path
+                        className="mountain-snow"
+                        d="
+                            M735 100
+                            L900 370
+                            L840 315
+                            L805 350
+                            L760 290
+                            L720 340
+                            Z
+                        "
+                    />
+
+                    <path
+                        className="mountain-snow"
+                        d="
+                            M1060 190
+                            L1190 390
+                            L1140 340
+                            L1105 365
+                            L1070 320
+                            L1030 355
+                            Z
+                        "
+                    />
+
+
+                    {/* MOUNTAIN SHADE */}
+
+                    <path
+                        className="mountain-shade"
+                        d="
+                            M735 100
+                            L735 650
+                            L900 370
+                            Z
+                        "
+                    />
+
+                    <path
+                        className="mountain-shade"
+                        d="
+                            M470 220
+                            L470 650
+                            L590 390
+                            Z
+                        "
+                    />
+
+
+                    {/* CONTOUR LINES */}
+
+                    <g className="mountain-lines">
+
+                        <path d="M735 100 L665 420" />
+
+                        <path d="M760 150 L700 450" />
+
+                        <path d="M790 210 L740 470" />
+
+                        <path d="M470 220 L405 470" />
+
+                        <path d="M500 275 L455 490" />
+
+                        <path d="M1060 190 L990 460" />
+
+                        <path d="M1090 240 L1030 480" />
+
+                    </g>
+
+
+                    {/* FRONT HILLS */}
+
+                    <path
+                        className="mountain-front"
+                        d="
+                            M0 530
+                            C170 450 310 470 450 525
+                            C590 580 690 510 820 520
+                            C970 535 1090 470 1240 500
+                            C1390 530 1490 480 1600 450
+                            L1600 650
+                            L0 650
+                            Z
+                        "
+                    />
+
+                </svg>
+
+
+                {/* TREES */}
+
+                <div className="mountain-trees">
+
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+
+                </div>
+
+            </div>
+
+
+            {/* =====================================
+                COORDINATES
+            ===================================== */}
+
+            <div className="hero-coordinates">
+                28°32'N&nbsp;&nbsp;77°23'E
+            </div>
+
+
+            {/* =====================================
+                BOTTOM STRIP
+            ===================================== */}
+
+            <div className="hero-footer">
+
+                <span>FULL STACK</span>
+
+                <span>AI / WEB</span>
+
+                <span>SOFTWARE</span>
+
+                <span>AVAILABLE FOR OPPORTUNITIES</span>
+
+            </div>
+
         </section>
     );
 };

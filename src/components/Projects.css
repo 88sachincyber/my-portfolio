@@ -1,0 +1,899 @@
+/* =====================================================
+   PROJECTS — EDITORIAL CASE STUDIES
+===================================================== */
+
+.projects-editorial {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding: 0 6vw 70px;
+
+    background: #eee9df;
+
+    color: #171717;
+
+    border-bottom: 1px solid #171717;
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   PAPER
+===================================================== */
+
+.projects-paper {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    opacity: 0.22;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            rgba(0, 0, 0, 0.18) 0.5px,
+            transparent 0.5px
+        );
+
+    background-size: 4px 4px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.projects-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(23, 23, 23, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        20% 100%,
+        100% 120px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.projects-header {
+    min-height: 110px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.4fr
+        1fr
+        2fr
+        0.5fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid
+        rgba(23, 23, 23, 0.35);
+
+    font-family:
+        "Courier New",
+        monospace;
+}
+
+
+/* Number */
+
+.projects-number {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 34px;
+
+    font-style: italic;
+}
+
+
+/* Label */
+
+.projects-label {
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* Intro */
+
+.projects-intro {
+    width: 290px;
+
+    justify-self: center;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+}
+
+
+/* Count */
+
+.projects-count {
+    text-align: right;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.projects-title {
+    padding-top: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.projects-title > span {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+.projects-title h2 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            70px,
+            10vw,
+            150px
+        );
+
+    font-weight: 500;
+
+    line-height: 0.75;
+
+    letter-spacing: -0.075em;
+}
+
+.projects-title-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(23, 23, 23, 0.3);
+}
+
+
+/* =====================================================
+   PROJECT LIST
+===================================================== */
+
+.projects-list {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 70px;
+
+    border-top: 1px solid #171717;
+}
+
+
+/* =====================================================
+   PROJECT ROW
+===================================================== */
+
+.project-row {
+    position: relative;
+
+    min-height: 290px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.35fr
+        1.25fr
+        2.5fr
+        0.3fr;
+
+    align-items: stretch;
+
+    border-bottom: 1px solid
+        rgba(23, 23, 23, 0.3);
+
+    transition:
+        background 0.3s ease;
+}
+
+.project-row:hover {
+    background:
+        rgba(23, 23, 23, 0.035);
+}
+
+
+/* =====================================================
+   ALTERNATING ROW
+===================================================== */
+
+.project-row-reverse {
+    grid-template-columns:
+        0.35fr
+        2.5fr
+        1.25fr
+        0.3fr;
+}
+
+
+/* =====================================================
+   INDEX
+===================================================== */
+
+.project-index {
+    padding-top: 28px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.5;
+}
+
+
+/* =====================================================
+   PROJECT IDENTITY
+===================================================== */
+
+.project-identity {
+    position: relative;
+
+    padding:
+        35px
+        40px
+        30px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.project-row-reverse .project-identity {
+    grid-column: 3;
+
+    padding:
+        35px
+        0
+        30px 40px;
+}
+
+
+/* Type */
+
+.project-type {
+    margin-bottom: 14px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.55;
+}
+
+
+/* Project title */
+
+.project-identity h3 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            4vw,
+            68px
+        );
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.045em;
+}
+
+
+/* =====================================================
+   DECORATIVE MARK
+===================================================== */
+
+.project-mark {
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: 28px;
+}
+
+.project-mark span {
+    display: block;
+
+    width: 6px;
+
+    height: 6px;
+
+    border: 1px solid #171717;
+
+    border-radius: 50%;
+}
+
+.project-mark span:nth-child(2) {
+    background: #171717;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.project-details {
+    padding:
+        35px
+        0
+        30px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-left: 1px solid
+        rgba(23, 23, 23, 0.22);
+}
+
+.project-row-reverse .project-details {
+    grid-column: 2;
+
+    grid-row: 1;
+
+    padding:
+        35px
+        30px
+        30px 0;
+
+    border-left: none;
+
+    border-right: 1px solid
+        rgba(23, 23, 23, 0.22);
+}
+
+
+/* Description */
+
+.project-details > p {
+    width: 520px;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TECHNOLOGY
+===================================================== */
+
+.project-tech {
+    margin-top: 25px;
+}
+
+.tech-label {
+    margin-bottom: 9px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+.tech-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.tech-list span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        6px 8px;
+
+    border: 1px solid
+        rgba(23, 23, 23, 0.4);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.tech-list span:hover {
+    background: #171717;
+
+    color: #eee9df;
+}
+
+.tech-list small {
+    font-size: 5px;
+
+    opacity: 0.5;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.project-links {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.project-link {
+    min-width: 105px;
+
+    height: 34px;
+
+    padding: 0 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border: 1px solid #171717;
+
+    color: #171717;
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.08em;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.project-link span {
+    font-size: 13px;
+}
+
+.project-link:hover {
+    background: #171717;
+
+    color: #eee9df;
+}
+
+.project-link-dark {
+    background: #171717;
+
+    color: #eee9df;
+}
+
+.project-link-dark:hover {
+    background: transparent;
+
+    color: #171717;
+}
+
+
+/* =====================================================
+   SIDE NUMBER
+===================================================== */
+
+.project-side-number {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    padding-top: 25px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+
+    opacity: 0.2;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.projects-footer {
+    min-height: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+
+    border-top: 1px solid
+        rgba(23, 23, 23, 0.35);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.09em;
+}
+
+.projects-footer span:not(:last-child) {
+    border-right:
+        1px solid
+        rgba(23, 23, 23, 0.25);
+}
+
+.projects-footer span:nth-child(2),
+.projects-footer span:nth-child(3) {
+    text-align: center;
+}
+
+.projects-footer span:last-child {
+    text-align: right;
+}
+
+
+/* =====================================================
+   BACKGROUND NUMBER
+===================================================== */
+
+.projects-bg-number {
+    position: absolute;
+
+    z-index: -1;
+
+    right: -2vw;
+
+    bottom: -4vw;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            300px,
+            38vw,
+            650px
+        );
+
+    line-height: 0.7;
+
+    color:
+        rgba(23, 23, 23, 0.035);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .projects-editorial {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .projects-header {
+        grid-template-columns:
+            0.4fr
+            1fr
+            1.5fr
+            0.5fr;
+    }
+
+    .project-row,
+    .project-row-reverse {
+        grid-template-columns:
+            45px
+            1fr
+            1.6fr
+            35px;
+    }
+
+    .project-identity,
+    .project-row-reverse .project-identity {
+        padding-right: 25px;
+        padding-left: 0;
+    }
+
+    .project-row-reverse .project-details,
+    .project-details {
+        padding-left: 25px;
+        padding-right: 0;
+    }
+
+    .project-identity h3 {
+        font-size: 40px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .projects-editorial {
+        padding:
+            0
+            18px
+            45px;
+    }
+
+
+    .projects-header {
+        min-height: 90px;
+
+        grid-template-columns:
+            0.4fr
+            1fr
+            0.6fr;
+    }
+
+    .projects-intro {
+        display: none;
+    }
+
+    .projects-count {
+        text-align: right;
+    }
+
+
+    .projects-title {
+        padding-top: 55px;
+
+        gap: 15px;
+    }
+
+    .projects-title h2 {
+        font-size: 70px;
+    }
+
+    .projects-title-line {
+        display: none;
+    }
+
+
+    .projects-list {
+        margin-top: 45px;
+    }
+
+
+    .project-row,
+    .project-row-reverse {
+        min-height: auto;
+
+        display: grid;
+
+        grid-template-columns:
+            35px
+            1fr;
+
+        padding:
+            28px 0;
+    }
+
+
+    .project-index {
+        padding-top: 5px;
+    }
+
+
+    .project-identity,
+    .project-row-reverse .project-identity {
+        grid-column: 2;
+
+        grid-row: 1;
+
+        padding:
+            0;
+
+        border: none;
+    }
+
+
+    .project-identity h3 {
+        font-size: 42px;
+    }
+
+
+    .project-details,
+    .project-row-reverse .project-details {
+        grid-column: 2;
+
+        grid-row: 2;
+
+        padding:
+            25px
+            0
+            0;
+
+        border:
+            none;
+    }
+
+
+    .project-details > p {
+        width: 100%;
+
+        font-size: 8px;
+    }
+
+
+    .project-side-number {
+        display: none;
+    }
+
+
+    .tech-list {
+        gap: 4px;
+    }
+
+
+    .tech-list span {
+        font-size: 6px;
+
+        padding:
+            5px 7px;
+    }
+
+
+    .project-links {
+        margin-top: 20px;
+    }
+
+
+    .project-link {
+        min-width: 100px;
+
+        height: 32px;
+    }
+
+
+    .projects-footer {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        padding: 10px 0;
+    }
+
+    .projects-footer span:nth-child(3),
+    .projects-footer span:nth-child(4) {
+        display: none;
+    }
+
+    .projects-footer span:nth-child(2) {
+        text-align: right;
+    }
+
+
+    .projects-bg-number {
+        font-size: 250px;
+    }
+}

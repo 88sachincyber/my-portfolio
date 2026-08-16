@@ -1,0 +1,1021 @@
+/* =====================================================
+   EDITORIAL HERO
+===================================================== */
+
+.editorial-hero {
+    position: relative;
+
+    width: 100%;
+
+    height: calc(100vh - 72px);
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    background: #eee9df;
+
+    color: #171717;
+
+    border-bottom: 1px solid #171717;
+
+    isolation: isolate;
+}
+
+
+/* =====================================================
+   PAPER
+===================================================== */
+
+.hero-paper {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    opacity: 0.24;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            rgba(0, 0, 0, 0.18) 0.5px,
+            transparent 0.5px
+        );
+
+    background-size: 4px 4px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(20, 20, 20, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(20, 20, 20, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        25% 100%,
+        100% 120px;
+}
+
+
+/* =====================================================
+   GIANT NUMBER
+===================================================== */
+
+.hero-number {
+    position: absolute;
+
+    right: 2%;
+
+    top: 25%;
+
+    z-index: -1;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: min(28vw, 430px);
+
+    line-height: 0.7;
+
+    color: rgba(20, 20, 20, 0.045);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =====================================================
+   TOP META
+===================================================== */
+
+.hero-meta {
+    position: relative;
+
+    z-index: 20;
+
+    height: 68px;
+
+    padding: 0 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        0.5fr
+        1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(23, 23, 23, 0.3);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.1em;
+}
+
+.meta-center {
+    text-align: center;
+}
+
+.meta-year {
+    text-align: center;
+}
+
+.meta-scroll {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.meta-arrow {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.hero-main {
+    position: relative;
+
+    z-index: 10;
+
+    height: 47%;
+
+    padding: 42px 8vw 0;
+
+    display: grid;
+
+    grid-template-columns: 1.08fr 0.92fr;
+
+    column-gap: 5vw;
+}
+
+
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.hero-left {
+    position: relative;
+
+    z-index: 15;
+}
+
+.hello-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.13em;
+}
+
+.hello-text span {
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+.hero-name {
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            75px,
+            9vw,
+            150px
+        );
+
+    font-weight: 500;
+
+    line-height: 0.72;
+
+    letter-spacing: -0.075em;
+}
+
+.hero-name-second {
+    margin-left: 11vw;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   NAME LINE
+===================================================== */
+
+.name-line {
+    width: 90px;
+
+    height: 1px;
+
+    margin-top: 30px;
+
+    background: #171717;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.hero-right {
+    position: relative;
+
+    z-index: 20;
+
+    padding-top: 35px;
+
+    max-width: 500px;
+}
+
+.build-label {
+    margin-bottom: 12px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   ROLE
+===================================================== */
+
+.hero-role {
+    margin: 0;
+
+    min-height: 38px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            20px,
+            2vw,
+            28px
+        );
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.025em;
+}
+
+.hero-typewriter {
+    white-space: nowrap;
+}
+
+.hero-cursor {
+    margin-left: 4px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-style: normal;
+
+    animation:
+        cursorBlink 0.8s
+        steps(1)
+        infinite;
+}
+
+@keyframes cursorBlink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-description {
+    width: 430px;
+
+    max-width: 100%;
+
+    margin: 26px 0 0;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    line-height: 1.85;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 27px;
+}
+
+.editorial-button {
+    min-width: 155px;
+
+    height: 45px;
+
+    padding: 0 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border: 1px solid #171717;
+
+    background: rgba(
+        238,
+        233,
+        223,
+        0.75
+    );
+
+    color: #171717;
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.08em;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.editorial-button strong {
+    font-size: 15px;
+
+    font-weight: 400;
+}
+
+.editorial-button:hover {
+    transform: translateY(-2px);
+
+    background: #171717;
+
+    color: #eee9df;
+}
+
+.primary-button {
+    background: #171717;
+
+    color: #eee9df;
+}
+
+
+/* =====================================================
+   BIRDS
+===================================================== */
+
+.birds {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 12;
+
+    pointer-events: none;
+}
+
+.bird {
+    position: absolute;
+
+    width: 45px;
+
+    color: #171717;
+
+    opacity: 0.7;
+}
+
+.bird-1 {
+    top: 25%;
+
+    left: 43%;
+
+    transform: scale(0.7);
+
+    animation:
+        birdMove 6s
+        ease-in-out
+        infinite;
+}
+
+.bird-2 {
+    top: 18%;
+
+    left: 57%;
+
+    transform: scale(0.4);
+
+    animation:
+        birdMove 7s
+        ease-in-out
+        infinite 1s;
+}
+
+.bird-3 {
+    top: 30%;
+
+    left: 67%;
+
+    transform: scale(0.3);
+
+    animation:
+        birdMove 8s
+        ease-in-out
+        infinite 2s;
+}
+
+.bird-4 {
+    top: 14%;
+
+    left: 76%;
+
+    transform: scale(0.25);
+
+    animation:
+        birdMove 7s
+        ease-in-out
+        infinite 1.5s;
+}
+
+@keyframes birdMove {
+
+    0%,
+    100% {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    50% {
+        margin-left: 18px;
+        margin-top: -7px;
+    }
+}
+
+
+/* =====================================================
+   SUN
+===================================================== */
+
+.hero-sun {
+    position: absolute;
+
+    z-index: 0;
+
+    right: 16%;
+
+    top: 28%;
+
+    width: 120px;
+
+    height: 120px;
+
+    border: 1px solid
+        rgba(23, 23, 23, 0.28);
+
+    border-radius: 50%;
+}
+
+.sun-inner {
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px dashed
+        rgba(23, 23, 23, 0.18);
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   MOUNTAINS
+===================================================== */
+
+.mountain-landscape {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 35px;
+
+    height: 48%;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+.mountains-svg {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    bottom: 0;
+}
+
+
+/* Back range */
+
+.mountain-back {
+    fill: #d8d2c7;
+
+    stroke: #171717;
+
+    stroke-width: 1.2;
+}
+
+
+/* Main range */
+
+.mountain-main {
+    fill: #c8c1b5;
+
+    stroke: #171717;
+
+    stroke-width: 1.5;
+}
+
+
+/* Snow */
+
+.mountain-snow {
+    fill: #eee9df;
+
+    stroke: #171717;
+
+    stroke-width: 1;
+}
+
+
+/* Shading */
+
+.mountain-shade {
+    fill: rgba(95, 91, 83, 0.16);
+}
+
+
+/* Contour lines */
+
+.mountain-lines {
+    fill: none;
+
+    stroke:
+        rgba(23, 23, 23, 0.35);
+
+    stroke-width: 1;
+
+    stroke-dasharray: 4 5;
+}
+
+
+/* Front hill */
+
+.mountain-front {
+    fill: #918b81;
+
+    stroke: #171717;
+
+    stroke-width: 1.4;
+}
+
+
+/* =====================================================
+   TREES
+===================================================== */
+
+.mountain-trees {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-around;
+
+    padding: 0 5vw;
+}
+
+.mountain-trees span {
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        8px solid transparent;
+
+    border-right:
+        8px solid transparent;
+
+    border-bottom:
+        38px solid #35332f;
+
+    transform-origin: bottom;
+}
+
+.mountain-trees span:nth-child(2) {
+    transform: scale(0.75);
+}
+
+.mountain-trees span:nth-child(3) {
+    transform: scale(1.3);
+}
+
+.mountain-trees span:nth-child(4) {
+    transform: scale(0.65);
+}
+
+.mountain-trees span:nth-child(5) {
+    transform: scale(1.45);
+}
+
+.mountain-trees span:nth-child(6) {
+    transform: scale(0.8);
+}
+
+.mountain-trees span:nth-child(7) {
+    transform: scale(1.15);
+}
+
+.mountain-trees span:nth-child(8) {
+    transform: scale(0.7);
+}
+
+.mountain-trees span:nth-child(9) {
+    transform: scale(1.25);
+}
+
+.mountain-trees span:nth-child(10) {
+    transform: scale(0.8);
+}
+
+
+/* =====================================================
+   COORDINATES
+===================================================== */
+
+.hero-coordinates {
+    position: absolute;
+
+    right: 27px;
+
+    bottom: 115px;
+
+    z-index: 15;
+
+    writing-mode:
+        vertical-rl;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   BOTTOM STRIP
+===================================================== */
+
+.hero-footer {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 50;
+
+    height: 35px;
+
+    padding: 0 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1.5fr;
+
+    align-items: center;
+
+    background:
+        rgba(
+            238,
+            233,
+            223,
+            0.96
+        );
+
+    border-top: 1px solid #171717;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+}
+
+.hero-footer span {
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.hero-footer span:not(:last-child) {
+    border-right:
+        1px solid
+        rgba(23, 23, 23, 0.3);
+}
+
+.hero-footer span:nth-child(2),
+.hero-footer span:nth-child(3) {
+    justify-content: center;
+}
+
+.hero-footer span:last-child {
+    justify-content: flex-end;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .hero-main {
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        column-gap: 3vw;
+    }
+
+    .hero-name {
+        font-size: 11vw;
+    }
+
+    .hero-description {
+        width: 360px;
+    }
+
+    .hero-role {
+        font-size: 20px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .editorial-hero {
+        height: calc(100svh - 62px);
+
+        min-height: 680px;
+    }
+
+    .hero-meta {
+        height: 55px;
+
+        padding: 0 18px;
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .meta-center,
+    .meta-year {
+        display: none;
+    }
+
+    .meta-scroll {
+        justify-content: flex-end;
+    }
+
+    .hero-main {
+        height: auto;
+
+        padding:
+            40px 20px 0;
+
+        display: block;
+    }
+
+    .hero-name {
+        font-size:
+            clamp(
+                68px,
+                20vw,
+                105px
+            );
+    }
+
+    .hero-name-second {
+        margin-left: 13vw;
+    }
+
+    .name-line {
+        margin-top: 25px;
+    }
+
+    .hero-right {
+        padding-top: 35px;
+    }
+
+    .hero-role {
+        font-size: 18px;
+    }
+
+    .hero-typewriter {
+        white-space: normal;
+    }
+
+    .hero-description {
+        width: 100%;
+
+        font-size: 8px;
+
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        gap: 8px;
+    }
+
+    .editorial-button {
+        min-width: 135px;
+
+        height: 40px;
+
+        font-size: 7px;
+    }
+
+    .mountain-landscape {
+        height: 31%;
+
+        bottom: 35px;
+    }
+
+    .hero-sun {
+        width: 65px;
+
+        height: 65px;
+
+        top: 44%;
+
+        right: 8%;
+    }
+
+    .hero-number {
+        top: 42%;
+
+        font-size: 170px;
+    }
+
+    .hero-coordinates {
+        display: none;
+    }
+
+    .hero-footer {
+        height: 35px;
+
+        padding: 0 18px;
+
+        grid-template-columns:
+            1fr
+            1fr
+            1fr;
+    }
+
+    .hero-footer span:last-child {
+        display: none;
+    }
+
+    .hero-footer span {
+        font-size: 6px;
+    }
+}

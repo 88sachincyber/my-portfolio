@@ -1,54 +1,177 @@
-import React from 'react';
-import { FaCode, FaTools, FaDatabase, FaLaptopCode, FaServer } from 'react-icons/fa';
+import React from "react";
+import "./Skills.css";
 
 const Skills = () => {
-    const skills = {
-        'Programming Language': {
-            icon: <FaCode className="me-2 text-pink-custom" />,
-            list: ['Java', 'Python', 'JavaScript','PHP']
+    const skills = [
+        {
+            number: "01",
+            category: "PROGRAMMING",
+            description: "Languages I use to build and solve problems.",
+            items: [
+                "Java",
+                "Python",
+                "JavaScript(ES6+)",
+                "PHP",
+            ],
         },
-        'Frontend': {
-            icon: <FaLaptopCode className="me-2 text-pink-custom" />,
-            list: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Redux', 'Bootstrap', 'Tailwind CSS']
+        {
+            number: "02",
+            category: "FRONTEND",
+            description: "Building responsive and interactive interfaces.",
+            items: [
+                "HTML5",
+                "CSS3",
+                "React.js",
+                "Redux",
+                "Bootstrap",
+                "Tailwind CSS",
+            ],
         },
-        'Backend': {
-            icon: <FaServer className="me-2 text-pink-custom" />,
-            list: ['Node.js', 'Express.js']
+        {
+            number: "03",
+            category: "BACKEND",
+            description: "Developing APIs and server-side applications.",
+            items: [
+                "Node.js",
+                "Express.js",
+                "FastAPI",
+                "REST APIs",
+                "JSON"
+            ],
         },
-        'Databases': {
-            icon: <FaDatabase className="me-2 text-pink-custom" />,
-            list: ['MongoDB', 'MySQL']
+        {
+            number: "04",
+            category: "DATABASES",
+            description: "Working with relational and NoSQL data.",
+            items: [
+                "MongoDB",
+                "MySQL",
+                "PostgreSQL",
+            ],
         },
-        'Tools & Others': {
-            icon: <FaTools className="me-2 text-pink-custom" />,
-            list: ['Git', 'GitHub', 'VS Code', 'Webpack', 'RESTful APIs', 'Figma', 'Postman']
-        }
-    };
+        {
+            number: "05",
+            category: "TOOLS & OTHERS",
+            description: "Tools and technologies used across projects.",
+            items: [
+                "DSA",
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Webpack",
+                "Figma",
+                "Postman",
+                "Render",
+                "Vercel",
+                "Authentication & Authorization",
+                "OOP",
+            ],
+        },
+    ];
 
     return (
-        <section id="skills" className="py-5">
-            <h2 className="text-center text-pink-custom mb-5 animate-fade-in-up">My Skills 🛠️</h2>
+        <section className="skills-editorial" id="skills">
 
-            {Object.entries(skills).map(([category, { icon, list }], index) => (
-                <div key={category} className="mb-4 animate-fade-in-up" style={{ animationDelay: `${0.2 * index}s`, animationDuration: '0.6s' }}>
-                    <h4 className="text-light mb-3 d-flex align-items-center">{icon}{category}</h4>
-                    <div className="d-flex flex-wrap gap-3">
-                        {list.map((skill, i) => (
-                            <div
-                                key={i}
-                                className="bg-dark border border-pink-custom text-light p-3 rounded shadow-sm animate-zoom-in"
-                                style={{
-                                    minWidth: '120px',
-                                    textAlign: 'center',
-                                    transition: 'transform 0.3s ease',
-                                }}
-                            >
-                                {skill}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
+            {/* Background */}
+            <div className="skills-paper" />
+            <div className="skills-grid" />
+
+
+
+            {/* Main heading */}
+            <div className="skills-heading">
+
+                <span>MY</span>
+
+                <h2>
+                    SKILLS
+                </h2>
+
+                <span className="heading-line" />
+
+            </div>
+
+
+            {/* Skill categories */}
+            <div className="skills-list">
+
+                {skills.map((skill) => (
+                    <article
+                        className="skill-row"
+                        key={skill.number}
+                    >
+
+                        {/* Number */}
+                        <div className="skill-number">
+                            {skill.number}
+                        </div>
+
+
+                        {/* Category */}
+                        <div className="skill-category">
+
+                            <h3>
+                                {skill.category}
+                            </h3>
+
+                            <p>
+                                {skill.description}
+                            </p>
+
+                        </div>
+
+
+                        {/* Skill list */}
+                        <div className="skill-items">
+
+                            {skill.items.map((item, index) => (
+                                <span
+                                    className="skill-item"
+                                    key={item}
+                                >
+                                    <span className="skill-item-index">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+
+                                    {item}
+                                </span>
+                            ))}
+
+                        </div>
+
+                    </article>
+                ))}
+
+            </div>
+
+
+            {/* Bottom */}
+            <div className="skills-bottom">
+
+                <span>
+                    SOFTWARE ENGINEERING
+                </span>
+
+                <span>
+                    FULL STACK / WEB / AI
+                </span>
+
+                <span>
+                    05 CATEGORIES
+                </span>
+
+                <span>
+                    ↓ CONTINUE
+                </span>
+
+            </div>
+
+
+            {/* Decorative number */}
+            <div className="skills-bg-number">
+                02
+            </div>
+
         </section>
     );
 };

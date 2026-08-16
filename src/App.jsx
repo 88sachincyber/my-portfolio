@@ -1,32 +1,49 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Skills from './components/Skills';
-import Education from './components/Education';
+import React, { useState } from "react";
+import "./App.css";
+import LoadingPage from "./components/LoadingPage";
+import Header from "./components/Header";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
 
 const App = () => {
-    return (
-        <div className="bg-dark-custom text-light min-vh-100">
-            {/* Fixed or sticky Header with links to sections */}
-            <Header />
+  const [isLoading, setIsLoading] = useState(true);
 
-            {/* All sections are rendered in order */}
-            <main className="container py-5">
-                <section id="about"><About /></section>
-                <section id="skills"><Skills /></section>
-                <section id="projects"><Projects /></section>
-                <section id="education"><Education /></section>
-                <section id="contact"><Contact /></section>
-            </main>
+  return (
+    <>
+      {isLoading && (
+        <LoadingPage onComplete={() => setIsLoading(false)} />
+      )}
 
-            {/* Footer at the bottom */}
-            <Footer />
-        </div>
-    );
+      <div className="portfolio-app">
+        <Header />
+
+        <main>
+          <section id="about">
+            <About />
+          </section>
+
+          <section id="skills">
+            <Skills />
+          </section>
+
+          <section id="projects">
+            <Projects />
+          </section>
+
+          <section id="education">
+            <Education />
+          </section>
+
+          <section id="contact">
+            <Contact />
+          </section>
+        </main>
+      </div>
+    </>
+  );
 };
 
 export default App;
